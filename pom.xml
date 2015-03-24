@@ -12,6 +12,10 @@
         <url>http://zalando-stups.github.io</url>
     </organization>
 
+    <modules>
+        <module>parent</module>
+    </modules>
+
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
@@ -45,4 +49,5 @@
         <system>GitHub</system>
         <url>https://github.com/zalando-stups/stups-build/issues</url>
     </issueManagement>
+
 </project>
