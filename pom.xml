@@ -43,8 +43,8 @@
         <url>https://github.com/zalando-stups/stups-build</url>
         <connection>scm:git:https://github.com/zalando-stups/stups-build.git</connection>
         <developerConnection>scm:git:https://github.com/zalando-stups/stups-build.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <issueManagement>
         <system>GitHub</system>
@@ -129,6 +129,7 @@
                 <artifactId>maven-scm-plugin</artifactId>
                 <version>1.9.2</version>
                 <configuration>
+                    <connectionType>connection</connectionType>
                     <tag>${project.version}</tag>
                 </configuration>
             </plugin>
