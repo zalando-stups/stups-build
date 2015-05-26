@@ -43,7 +43,15 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
         <deployment.atEnd>true</deployment.atEnd>
+
+        <java.source>1.8</java.source>
+        <java.target>1.8</java.target>
+
+        <license.email>http://tech.zalando.com</license.email>
+        <license.strict>true</license.strict>
     </properties>
 
     <profiles>
@@ -134,10 +142,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.2</version>
+                <version>3.3</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>${java.source}</source>
+                    <target>${java.target}</target>
                 </configuration>
             </plugin>
 
@@ -164,7 +172,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.2</version>
+                <version>2.10.3</version>
                 <configuration>
                     <breakiterator>true</breakiterator>
                     <header>${project.name}</header>
@@ -220,6 +228,37 @@
                     <useReleaseProfile>false</useReleaseProfile>
                     <arguments>-Pcustom-release,maven</arguments>
                 </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>2.10</version>
+                <configuration>
+                    <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+                    <properties>
+                        <owner>Zalando SE</owner>
+                        <email>${license.email}</email>
+                    </properties>
+                    <includes>
+                        <include>src/main/java/**/*.java</include>
+                        <include>src/test/java/**/*.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>LICENSE</exclude>
+                        <exclude>MAINTAINERS</exclude>
+                        <exclude>**/*.yml</exclude>
+                        <exclude>**/spring.factories</exclude>
+                    </excludes>
+                    <strictCheck>${license.strict}</strictCheck>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
         </plugins>
