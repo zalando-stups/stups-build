@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.zalando.stups.build</groupId>
         <artifactId>stups-build</artifactId>
-        <version>5-SNAPSHOT</version>
+        <version>5</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <artifactId>stups-parent</artifactId>
