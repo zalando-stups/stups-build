@@ -52,6 +52,8 @@
 
         <license.email>http://tech.zalando.com</license.email>
         <license.strict>true</license.strict>
+
+        <autoReleaseAfterClose>true</autoReleaseAfterClose>
     </properties>
 
     <profiles>
@@ -117,6 +119,17 @@
                                 </goals>
                             </execution>
                         </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.5</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>${autoReleaseAfterClose}</autoReleaseAfterClose>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
