@@ -11,7 +11,7 @@
     <name>STUPS Build - General parent pom module</name>
     <description>Parent pom.xml that can be used by STUPS Maven projects</description>
     <url>http://zalando-stups.github.io</url>
-    <inceptionYear>2015</inceptionYear>
+    <inceptionYear>2016</inceptionYear>
 
     <organization>
         <name>Zalando SE</name>
@@ -52,6 +52,8 @@
 
         <license.email>http://tech.zalando.com</license.email>
         <license.strict>true</license.strict>
+        <license.skip>true</license.skip>
+        <license.header>com/mycila/maven/plugin/license/templates/MIT.txt</license.header>
 
         <autoReleaseAfterClose>true</autoReleaseAfterClose>
     </properties>
@@ -248,7 +250,7 @@
                 <artifactId>license-maven-plugin</artifactId>
                 <version>2.10</version>
                 <configuration>
-                    <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+                    <header>${license.header}</header>
                     <properties>
                         <owner>Zalando SE</owner>
                         <email>${license.email}</email>
@@ -264,6 +266,7 @@
                         <exclude>**/spring.factories</exclude>
                     </excludes>
                     <strictCheck>${license.strict}</strictCheck>
+                    <skip>${license.skip}</skip>
                 </configuration>
                 <executions>
                     <execution>
