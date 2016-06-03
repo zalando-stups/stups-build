@@ -1,6 +1,6 @@
 # STUPS Build
 
-TODO
+A common Maven configuration used by some libraries in 'zalando-stups'. Mostly used as a 'parent' to avoid writing the same xml in poms again and again.
 
 ## License
 
